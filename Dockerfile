@@ -19,12 +19,14 @@ RUN \
 # Define mountable directories.
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
-# Define working directory.
-WORKDIR /etc/nginx
-
 RUN mkdir -p /app/dockshare/rocksdb
 RUN mkdir -p /app/dockshare/rocksdb/logs
 RUN mkdir -p /app/dockshare/rocksdb/wal_dir
+
+# Define working directory.
+WORKDIR /etc/nginx
+
+
 
 # Define default command.
 CMD ["nginx"]
